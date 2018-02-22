@@ -1,37 +1,37 @@
-(function(angular) {
-    'use strict';
-    angular.module('mainApp').component('boardPage', {
+'use strict';
+export const boardComponent = {
         templateUrl: '../app/pages/boardPage.html',
         bindings: {
             message: '='
         },
-        controller:  ['$scope', '$timeout', function($scope, $timeout) {
+        controller:  ['$scope', '$timeout','$stateParams', function($scope, $timeout, $stateParams) {
+            $scope.loginName = $stateParams.loginName;
             $scope.missesAllowed = 6;
-            var words = [
+            let words = [
                 'Rails', 'AngularJS', 'Bootstrap', 'Ruby', 'JavaScript',
                 'authentication', 'function', 'array', 'object', 'sublime',
                 'github', 'agile', 'route', 'database', 'model', 'view',
                 'controller', 'terminal', 'array', 'data', 'inheritance',
                 'Heroku', 'scope',  'closure'
             ];
-            var getRandomWord = function() {
+            let getRandomWord = function() {
                 var index = Math.floor(Math.random() * words.length);
                 return words[index];
             };
 
-            var makeLetters = function(word) {
+            let makeLetters = function(word) {
                 return _.map(word.split(''), function(character) {
                     return { name: character, chosen: false };
                 });
             };
 
-            var revealSecret = function() {
+            let revealSecret = function() {
                 _.each($scope.secretWord, function(letter) {
                     letter.chosen = true;
                 });
             };
 
-            var checkForEndOfGame = function() {
+            let checkForEndOfGame = function() {
                 $scope.win = _.reduce($scope.secretWord, function(acc, letter) {
                     return acc && letter.chosen;
                 }, true);
@@ -74,6 +74,4 @@
 
 
         }]
-    });
-
-})(window.angular);
+}
