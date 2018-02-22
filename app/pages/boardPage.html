@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="card bg-faded">
+        <div class="secretWord">
+            <ul class="list-inline">
+                <li  class="list-inline-item" ng-repeat="letter in secretWord">
+                    <span ng-hide="letter.chosen">_</span>
+                    <span ng-show="letter.chosen">{{ letter.name }}</span>
+                </li>
+            </ul>
+
+            <div class="letters">
+                <ul class="list-inline">
+                    <li class="list-inline-item" ng-repeat="letter in letters">
+                        <button class="btn btn-primary letter-button"
+                                ng-disabled="letter.chosen"
+                                ng-click="try(letter);">{{letter.name}}</button>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                <span ng-hide="win || lost">Vous avez {{ missesAllowed - numMisses }} essais restants.</span>
+                <span ng-show="win">Bien!</span>
+                <span ng-show="lost">Desolé vous avez perdu!</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<button ng-click="reset();" class="btn btn-primary btn-large">Nouveau jeu</button>

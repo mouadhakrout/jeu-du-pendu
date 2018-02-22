@@ -1,10 +1,8 @@
 <div class="container">
     <h1>Jeu du pendu en AngularJS 1.5</h1>
-    <div class="row">
-        <form novalidate>
-            <label>Votre pseudo</label>
-            <input type="text" ng-model="user.firstName"><br>
-            <a ui-sref="start({ loginName: user.firstName })">Jouer</a>
-        </form>
+    <div class="form-group">
+        <label>Votre pseudo</label>
+        <input type="text" id="usr"ng-model="user.firstName">
+        <button type="button" class="btn btn-primary" ui-sref="start({ loginName: user.firstName })">Jouer</button>
     </div>
 </div>
