@@ -15,7 +15,7 @@ export const boardComponent = {
                 'Heroku', 'scope',  'closure'
             ];
             let getRandomWord = function() {
-                var index = Math.floor(Math.random() * words.length);
+                const index = Math.floor(Math.random() * words.length);
                 return words[index];
             };
 
@@ -56,7 +56,7 @@ export const boardComponent = {
 
             $scope.try = function(guess) {
                 guess.chosen = true;
-                var found = false;
+                let found = false;
                 _.each($scope.secretWord,
                     function(letter) {
                         if (guess.name.toUpperCase() === letter.name.toUpperCase()) {
