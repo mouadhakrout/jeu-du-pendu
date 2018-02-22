@@ -12,7 +12,7 @@ Clone the project repository : git clone https://github.com/mouadhakrout/jeu-du-
 
 install required packages with npm : npm install
 
-run the project using http server (exemple) : run http-server [path] [options] command ( default port :8080)
+run the project using http server (example) : run http-server [path] [options] command ( default port :8080)
 
 
 
