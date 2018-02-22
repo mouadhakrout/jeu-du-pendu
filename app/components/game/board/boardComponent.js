@@ -7,13 +7,7 @@ export const boardComponent = {
         controller:  ['$scope', '$timeout','$stateParams', function($scope, $timeout, $stateParams) {
             $scope.loginName = $stateParams.loginName;
             $scope.missesAllowed = 6;
-            let words = [
-                'Rails', 'AngularJS', 'Bootstrap', 'Ruby', 'JavaScript',
-                'authentication', 'function', 'array', 'object', 'sublime',
-                'github', 'agile', 'route', 'database', 'model', 'view',
-                'controller', 'terminal', 'array', 'data', 'inheritance',
-                'Heroku', 'scope',  'closure'
-            ];
+            let words = ['mouadh','angularJs','reactJs','reactNative','Java','nodeJs', 'javascript', 'vueJs'];
             let getRandomWord = function() {
                 const index = Math.floor(Math.random() * words.length);
                 return words[index];
